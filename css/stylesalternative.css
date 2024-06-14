@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+.board {
+    width: 100%;
+    height: 100vh;
+    overflow: scroll;
+    background-image: url(https://images.unsplash.com/photo-1543751416-705d3e34d02a?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay; /* Adiciona uma sobreposição para escurecer a imagem */
+    backdrop-filter: blur(5px); /* Aplica um efeito de desfoque para simular um quadro mais realista */
+    padding: 20px; /* Espaçamento interno para o quadro */
+}
+
+#todo-form {
+    padding: 20px;
+}
+
+#todo-form input {
+    padding: 12px;
+    margin-right: 12px;
+    width: 225px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    background: white;
+    color: black;
+    font-size: 14px;
+    outline: none;
+}
+
+#todo-form button {
+    padding: 12px 32px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    background: #ffffff;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.lanes {
+    display: flex;
+    gap: 16px;
+    padding: 24px 0;
+    overflow: auto;
+}
+
+.heading {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.swim-lanes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.8); /* Fundo levemente translúcido */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    padding: 12px;
+    border-radius: 8px; /* Borda mais suave */
+    width: 225px;
+    min-height: 120px;
+    flex-shrink: 0;
+}
+
+.task {
+    background: white;
+    color: black;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: move;
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.task:hover {
+    background-color: #f0f0f0; /* Mudança de cor ao passar o mouse */
+}
+
+.is-dragging {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    background: rgb(50, 50, 50);
+    color: white;
+}
+
+.trash-can {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ff3333;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza o ícone */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s ease; /* Transição suave */
+}
+
+.trash-can:hover {
+    opacity: 0.8;
+}

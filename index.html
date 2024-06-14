@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KanBan Board</title>
+
+        <link rel="stylesheet" href="/css/styles.css" />
+        <script src="/script/drag.js" defer></script>
+        <script src="/script/todo.js" defer></script>
+    </head>
+    <body>
+        <div class="board">
+            <form id="todo-form">
+                <input type="text" placeholder="New Todo..." id="todo-input" />
+                <button type="submit">Add +</button>
+            </form>
+            <div class="lanes">
+                <div class="swim-lanes" id="todo-lane">
+                    <h3 class="heading">TODO</h3>
+                    
+                    <p class="task" draggable="true">Read a book</p>
+                    <p class="task" draggable="true">fix the bedroom door</p>
+                    <p class="task" draggable="true">Rest for 5 minutes</p>
+                </div>
+
+                <div class="swim-lanes">
+                    <h3 class="heading">Doing</h3>
+                    
+                    <p class="task" draggable="true">Watching The Boys</p>
+                </div>
+
+                <div class="swim-lanes">
+                    <h3 class="heading">Done</h3>
+                    
+                    <p class="task" draggable="true">Go to gym</p>
+                </div>
+
+            </div>
+            
+            <div class="trash-can"><p>lixeira</p></div>
+        </div>
+    </body>   
+</html>
